@@ -1,11 +1,28 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
+import { generatePokerCard } from "./helpers/getCard";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const newCardButton = document.getElementById("new-card");
+const cardImage = document.getElementById("card-image");
+const suits = ["hearts", "spades", "clubs", "diamons"];
+const randomNumber = Math.floor(Math.random() * (14 - 1) + 1);
+const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+let currentCard = String(randomNumber + randomSuit);
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+console.log(newCardButton);
+
+window.onload = () => {
+  // Get a random card from helper getCard.js
+  generatePokerCard(currentCard, cardImage);
+
+  // Page is reload when button in clicked
+  newCardButton.addEventListener("click", () => {
+    location.reload();
+  });
+
+  // Reload page every 10 seconds
+  setTimeout(() => {
+    location.reload();
+  }, 10000);
 };
