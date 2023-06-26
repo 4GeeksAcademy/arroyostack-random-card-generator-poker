@@ -1,6 +1,6 @@
 export const generatePokerCard = image => {
   const suits = ["hearts", "spades", "clubs", "diamons"];
-  const randomNumber = Math.floor(Math.random() * (14 - 1) + 1);
+  const randomNumber = Math.floor(Math.random() * 13 + 1);
   const randomSuit = suits[Math.floor(Math.random() * suits.length)];
   let currentCard = String(randomNumber + randomSuit);
   const url =
