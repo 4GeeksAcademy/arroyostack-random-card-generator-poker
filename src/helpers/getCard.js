@@ -1,8 +1,12 @@
-export const generatePokerCard = (card, image) => {
+export const generatePokerCard = image => {
+  const suits = ["hearts", "spades", "clubs", "diamons"];
+  const randomNumber = Math.floor(Math.random() * (14 - 1) + 1);
+  const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+  let currentCard = String(randomNumber + randomSuit);
   const url =
     "https://raw.githubusercontent.com/4GeeksAcademy/arroyostack-random-card-generator-poker/2581db635539c3834a4e1d7d57fdc7255c46a038/src/assets/poker-cards/";
 
-  switch (card) {
+  switch (currentCard) {
     case "1clubs":
       image.src = `${url}AC.svg`;
       break;
@@ -164,5 +168,5 @@ export const generatePokerCard = (card, image) => {
       break;
   }
 
-  return card;
+  return currentCard;
 };
