@@ -15,7 +15,7 @@ window.onload = () => {
   generatePokerCard(cardImage);
 
   // Generates card every 10 seconds
-  setTimeout(() => {
+  setInterval(() => {
     generatePokerCard(cardImage);
   }, 10000);
 
